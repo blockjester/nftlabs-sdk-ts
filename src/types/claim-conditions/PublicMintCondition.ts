@@ -31,6 +31,7 @@ export interface ClaimCondition {
   currencyContract: string;
   currencyMetadata: CurrencyValue | null;
   merkleRoot: BytesLike;
+  merkleAddresses?: string[]
 }
 
 /**

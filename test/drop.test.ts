@@ -607,4 +607,12 @@ describe("Drop Module", async () => {
     await dropModule.setClaimConditions(dropModule.getClaimConditionsFactory());
     expect((await dropModule.getAllClaimConditions()).length).to.be.equal(0);
   });
+  it("should return addresses in the snapshot", async () => {
+    const factory = dropModule.getClaimConditionsFactory();
+    const phase = factory.newClaimPhase({
+      startTime: new Date(),
+    });
+    phase.setSnapshot([w1.address, w2.address, bobWallet.address]);
+    assert(phase.getSnapshotAddresses().length === 3);
+  });
 });

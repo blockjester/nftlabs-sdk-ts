@@ -550,5 +550,13 @@ describe("Bundle Drop Module", async () => {
       const merkle: { [key: string]: string } = metadata["merkle"];
       assert.lengthOf(Object.keys(merkle), 2);
     });
+    it("should return addresses in the snapshot", async () => {
+      const factory = bdModule.getClaimConditionFactory();
+      const phase = factory.newClaimPhase({
+        startTime: new Date(),
+      });
+      phase.setSnapshot([w1.address, w2.address, bobWallet.address]);
+      assert(phase.getSnapshotAddresses().length === 3);
+    });
   });
 });

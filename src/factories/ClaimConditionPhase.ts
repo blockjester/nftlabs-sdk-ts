@@ -121,6 +121,13 @@ export default class ClaimConditionPhase {
   }
 
   /**
+   * Get the list of addresses that are part of the snapshot.
+   */
+  public getSnapshotAddresses(): string[] | undefined {
+    return this._snapshot;
+  }
+
+  /**
    * Helper method that provides defaults for each claim condition.
    * @internal
    */
