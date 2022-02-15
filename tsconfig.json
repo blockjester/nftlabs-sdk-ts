@@ -35,5 +35,9 @@
     "emitDecoratorMetadata": true,
     "strictNullChecks": true,
     "noImplicitOverride": true
+  },
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts"],
+    "out": "typedocs"
   }
 }

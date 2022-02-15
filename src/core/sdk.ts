@@ -112,6 +112,7 @@ export class ThirdwebSDK extends RPCConnectionHandler {
    * @param contractAddress - the address of the contract to attempt to resolve the contract type for
    * @returns the {@link ContractType} for the given contract address
    * @throws if the contract type cannot be determined (is not a valid thirdweb contract)
+   * @internal
    */
   public async resolveContractType(
     contractAddress: string,

@@ -31,7 +31,8 @@
     "generate-snippets": "node ./scripts/generate-snippets.mjs",
     "build": "yarn generate-docs && yarn generate-snippets",
     "test": "echo \"\nUse 'yarn run test:all' to run all tests\nPass a test file pattern from ./test to run\n\n\t$ yarn run test test/pack.test.ts\" && ts-mocha -t 120000 -r esm -p tsconfig.testing.json",
-    "test:all": "ts-mocha -t 120000 -r esm -p tsconfig.testing.json './test/**/*.test.ts'"
+    "test:all": "ts-mocha -t 120000 -r esm -p tsconfig.testing.json './test/**/*.test.ts'",
+    "typedoc": "typedoc --plugin typedoc-plugin-markdown --emit docs --excludeInternal --excludePrivate --excludeProtected --excludeExternals --json typedocs/api.json --pretty --includeVersion"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.4.1",
@@ -71,6 +72,8 @@
     "ts-mocha": "^9.0.0",
     "ts-toolbelt": "^9.6.0",
     "tsup": "^5.11.11",
+    "typedoc": "^0.22.11",
+    "typedoc-plugin-markdown": "^3.11.14",
     "typescript": "^4.4.3"
   },
   "peerDependencies": {
